@@ -1,23 +1,164 @@
-// Custom.sass
-// Option B: Include parts of Bootstrap
-
-// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
-@import "/node_modules/bootstrap/scss/functions";
-
-// 2. Include any default variable overrides here
+// custom variables
 $primary: #5265E1;
 $secondary: #FA5959;
 
-// 3. Include remainder of required Bootstrap stylesheets
-@import "/node_modules/bootstrap/scss/variables";
-@import "/node_modules/bootstrap/scss/mixins";
+// import bootstrap
+@import "/node_modules/bootstrap/scss/bootstrap";
 
-// 4. Include any optional Bootstrap components as you like
-@import "/node_modules/bootstrap/scss/root";
-@import "/node_modules/bootstrap/scss/reboot";
-@import "/node_modules/bootstrap/scss/type";
-@import "/node_modules/bootstrap/scss/images";
-@import "/node_modules/bootstrap/scss/containers";
-@import "/node_modules/bootstrap/scss/grid";
+img {
+  object-fit: contain;
+}
+.my-10 {
+  margin-top: 6rem!important;
+  margin-bottom: 6rem!important;
+}
 
-// 5. Add additional custom code here
+.btn {
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.btn:hover {
+  background-color: white;
+}
+
+.btn-primary {
+  color: white;
+
+  &:hover {
+    border: 1px solid $primary;
+    color: $primary;
+  }
+}
+
+.btn-secondary {
+  color: white;
+
+  &:hover {
+    border: 1px solid $secondary;
+    color: $secondary;
+  }
+}
+
+.btn-light:hover {
+  border: 1px solid grey;
+  color: grey;
+}
+
+.max-ch {
+  max-width: 65ch;
+}
+
+.back-img {
+  z-index: -1;
+  background-color: $primary;
+  height: 280px;
+  width: 50vh;
+  position: absolute;
+  bottom: 30px;
+
+  &-right{
+    @extend .back-img;
+    right: -25%;
+    border-radius: 6rem 0 0 6rem;
+
+    @media (min-width: 767px) and (max-width: 992px) {
+      right: -50%;
+    }
+  }
+
+  &-left {
+    @extend .back-img;
+    left: -25%;
+    border-radius: 0 6rem 6rem 0;
+
+    @media (min-width: 767px) and (max-width: 992px) {
+      left: -50%;
+    }
+  }
+}
+
+.navbar-light {
+  background-color: transparent!important;
+}
+
+.nav-link {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #000;
+}
+
+.first-banner {
+  min-height: 30vh;
+
+  @media (min-width: 768px){
+    min-height: 50vh;
+  }
+
+  & img {
+    object-fit: contain;
+  }
+}
+
+.second-banner img {
+  object-fit: contain;
+}
+
+.nav-pills {
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+.nav-pills .nav-link {
+  padding: 1rem;
+
+  &:hover {
+    color: $secondary;
+  }
+}
+
+.nav-pills .nav-link.active {
+  color: #000;
+  font-weight: bolder;
+  background-color: transparent;
+  border-radius: 0;
+  border-bottom: 2px solid $secondary;
+}
+
+.mine-card {
+  border-radius: 0.5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+}
+
+.card-display-img {
+  display:flex;
+  justify-content:center;
+  height: 100px;
+}
+
+.accordion-item {
+  border-right-width: 0;
+  border-left-width: 0;
+}
+
+.accordion-header {
+  padding: 0.75rem 0;
+}
+
+.accordion-button:hover {
+  color: $secondary;
+}
+
+footer {
+  background-color: $primary;
+  padding: 4rem;
+
+  h1 {
+    max-width: 20ch;
+  }
+}
